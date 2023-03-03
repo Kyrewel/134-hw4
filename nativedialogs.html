@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="outputal webpage for Maximilian Wang" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Native Dialogs</title>
+    <script type="text/javascript" src="./DOMPurify-main/dist/purify.js"></script>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+    <h1>
+        Simple Dialogs?
+    </h1>
+    <div>
+    <button id="alert">Alert</button>
+    <button id="confirm">Confirm</button>
+    <button id="prompt">Prompt</button>
+    <button id="saferPrompt">Safer Prompt</button>
+    </div>
+    <hr>
+
+    <output id="response"></output>
+        
+    <script>
+        alertFunc = () => {
+            clearStyle();
+            setTimeout(() => {alert("Alert pressed");}, 0);
+        }
+        let text;
+        let output;
+        let response = document.getElementById("response");
+
+        document.getElementById("alert").addEventListener("click", alertFunc);
+        document.getElementById("prompt").addEventListener("click", promptFunc);
+        document.getElementById("saferPrompt").addEventListener("click", cleanPrompt);
+        document.getElementById("confirm").addEventListener("click", confirmFunc);
+
+        function confirmFunc(){
+            clearStyle();
+            setTimeout(() =>{
+                let choice = confirm("Do you confirm this?");
+                response.innerHTML = "Confirm result: " + choice;
+                response.style = "border-style: double; font-size: 20px; border-width: 5px; padding: 5px";
+            }, 0);
+        }
+        
+        function promptFunc() {
+            clearStyle();
+            setTimeout(() =>{
+                text = prompt("What is your name?", text);
+                if (text == null || text == "") {
+                    output = "Prompt result: User didn't enter anything";
+                }
+                else {
+                    output = "Prompt result: " + text;
+                }
+                response.innerHTML = output;
+                response.style = "border-style: double; font-size: 20px; border-width: 5px; padding: 5px";
+            }, 0);
+        }
+
+        function cleanPrompt() {
+            clearStyle();
+            setTimeout(() =>{
+                text = prompt("What is your name?", text);
+            
+                clean = DOMPurify.sanitize(text); 
+                if (clean == null || clean == "") {
+                    output = "Prompt result: User didn't enter anything";
+                }
+                else {
+                    output = "Prompt result: " + clean;
+                }
+                response.innerHTML = output;
+                response.style = "border-style: double; font-size: 20px; border-width: 5px; padding: 5px";
+            }, 0);
+        }
+
+        function clearStyle() {
+            response.innerHTML = "";
+            response.style = ""; 
+        }
+        // <b onmouseover='alert("pwned")'>Roll me</b>
+    </script>
+</body>
+
+</html>
