@@ -7,6 +7,34 @@
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple CRUD</title>
-    <script type="text/javascript" src="./DOMPurify-main/dist/purify.js"></script>
     <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
+
+<body>
+    <dialog id="editPrompt">
+        <p>Title</p>
+        <input id="newTitle" />
+        <p>Summary</p>
+        <input id="newSummary" />
+        <button id="cancelPrompt">Cancel</button>
+        <button id="submitPrompt">Ok</button>
+        <p id="promptMsg"></p>
+    </dialog>
+
+    <h2 class="text-center heading">Blog Posts</h2>
+
+    <div class="post">
+        <div class="columns medium-8">
+        <input id="title" type="text" />
+        <input id="summary" type="text" />
+        </div>
+        <div class="columns medium-4">
+        <button onclick="addItem()" class="button expanded">Add</button>
+        </div>
+    </div>
+
+    <ul id="post-items"></ul>
+
+    <script type="text/javascript" src="./blog.js"></script>
+
+</body>
