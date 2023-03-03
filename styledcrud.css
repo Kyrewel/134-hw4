@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ctrHead {
+    font-size: 60px;
+    color: lightskyblue
+}
+
+.input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;;
+}
+
+.title {
+    color: goldenrod;
+    font-size: 30px;
+}
+
+.summary {
+    color: darkolivegreen;
+    font-size: 20px;
+}
+
+.editBtn{
+    margin: 3px;
+    font-size: 20px;
+    background-color: violet;
+    color:white;
+}
+
+.deleteBtn {
+    font-size: 20px;
+    background-color: aquamarine;
+    color: white;
+}

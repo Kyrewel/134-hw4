@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="outputal webpage for Maximilian Wang" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fancy CRUD</title>
+    <link rel="stylesheet" href="styledcrud.css">
+</head>
+
+<body>
+    <dialog id="editPrompt">
+        <p>Title</p>
+        <input id="newTitle" />
+        <p>Summary</p>
+        <input id="newSummary" />
+        <button id="cancelPrompt">Cancel</button>
+        <button id="submitPrompt">Ok</button>
+        <p id="promptMsg"></p>
+    </dialog>
+
+    <h2 class="ctrHead">Blog Posts</h2>
+
+    <div class="post">
+        <div class="columns medium-8">
+        <input class="input" id="title" type="text" placeholder="title" />
+        <br/>
+        <input class="input" id="summary" type="text" placeholder="summary" />
+        </div>
+        <div class="columns medium-4">
+        <button onclick="addItem()" class="button expanded">Add</button>
+        </div>
+    </div>
+
+    <ul id="post-items"></ul>
+
+    <script type="text/javascript" src="./styledcrud.js"></script>
+
+</body>
